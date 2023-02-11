@@ -1,6 +1,29 @@
 .alert{
-    width: 500px;
+    width: 416px;
+   
 }
 button{
     margin-right: 10px;
+}
+.btn-options{
+    height: 38px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+input{
+    height: 38px;
+}
+.btn-sm{
+    font-size: 0.8em;
+    padding: 3px;
+    line-height: 8px;
+    background-color: rgb(242, 56, 56);
+    color: white;
+    
+}
+.img-stok, .box-right{
+    margin-right: 20px;
+}
+.specifications{
+    height: 208px;
 }

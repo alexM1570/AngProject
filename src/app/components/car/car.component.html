@@ -1,7 +1,18 @@
 <div class = "container">
     <br>
 <h1><mark>Автомобиль:</mark>{{name.toUpperCase()}}<small> {{model}}</small></h1>
-<div class="alert alert-success">
+<div class="d-flex">
+    <div class="img-start">
+        <img [src]="img" class="img-stok" alt="" width="416px" height="208px">
+        <div>
+            <h4>Выберите автомобиль</h4>
+            <button class="btn btn-success"(click) = "bmwSelect()">BMW</button>
+            <button class="btn btn-danger"(click) = "audiSelect()">AUDI</button>
+            <button class="btn btn-info"(click) = "nissanSelect()">Nissan</button>
+            </div>
+    </div>
+
+<div class="alert specifications alert-success">
     <h4>Характеристики автомобиля:</h4>
     <ul>
 <li>Скорость:<strong> {{speed}}</strong>км</li>
@@ -10,17 +21,34 @@
 <li>Цвет колес:<strong> {{colors.wheels}}</strong></li>
     </ul>
 </div>
-<h4>Дополнительные опции.</h4>
-<div class = 'alert alert-warning'>
+</div>
+<br>
+<div class="d-flex">
+<div class="alert box-right alert-info mr-2">
+    <h4>Добавить опции</h4>
+<form (submit)="addOpt(option.value)">
+<div class="form-group">
+    
+    <input type="text" id="option" value="" placeholder="Пример: Система DAC" class="form-control" #option> <br>
+    <button type="submit" class="btn btn-options btn-primary">Добавить</button>
+</div>
+</form>
+</div>
+
+<div class = 'alert  alert-warning'>
+    <h4>Дополнительные опции.</h4>
     <ul>
-<li *ngFor = 'let opt of options'>{{opt}}</li>
+<li *ngFor = 'let opt of options'>
+    {{opt}} <button class="btn btn-sm" (click)="deleteOpt(opt)">x</button>
+</li>
 
     </ul>
 </div>
-<div>
-<h4>Выберите автомобиль</h4>
-<button class="btn btn-success"(click) = "bmwSelect()">BMV</button>
-<button class="btn btn-danger"(click) = "audiSelect()">AUDI</button>
-<button class="btn btn-info"(click) = "nissanSelect()">Nissan</button>
+
 </div>
+
+<br>
+
+
+
 </div>
